@@ -1,4 +1,4 @@
-import Projects from "./Projects";
+import Projects from "./projects";
 import { Header, Footer } from "../../Global/components/components";
 import gotoTop from "../Home/gotoTop";
 import AOS from "aos";
