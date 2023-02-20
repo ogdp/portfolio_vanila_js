@@ -1,10 +1,10 @@
 import { useEffect } from "../../lib";
 import Header from "../../components/Header/Header";
 import Footer from "../../components/Footer/Footer";
-import About from "../About/About";
+import About from "../About/about";
 import Skills from "../Skill/skills";
-import Contact from "../Contact/Contact";
-import Projects from "../Projects/Projects";
+import Contact from "../Contact/contact";
+import Projects from "../Projects/projects";
 import Banner from "./banner";
 import GotoTop from "./gotoTop";
 import AOS from "aos";
