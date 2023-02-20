@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Portfolio</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"
+      integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link
+      rel="stylesheet"
+      href="https://site-assets.fontawesome.com/releases/v6.2.1/css/all.css"
+    />
+    <link rel="stylesheet" href="build/tailwind.css" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="./build/app.css" />
+  </head>
+  <style>
+    #saydev {
+      text-transform: uppercase;
+      color: #3f5e5b;
+      transition: all 0.3s ease;
+    }
+    #saydev:hover {
+      transform: translate3d(0, -10px, 22px);
+      color: #ff0266;
+    }
+  </style>
+  <body class="bg-[#fbfbfb] dark:bg-slate-900">
+    <header
+      class="border-b header border-blue-100/[.1] w-full blur-sm fixed bg-slate-900/[.1] backdrop-blur-sm z-50 md:filter-none"
+    >
+      <section class="max-w-6xl m-auto flex py-3">
+        <div id="menu" class="w-full flex items-center justify-between">
+          <a href="">
+            <img
+              class="w-12 rounded-full"
+              src="https://raw.githubusercontent.com/ogdp/vuesax-icon/main/d%20logoo%201.2.jpg"
+              alt=""
+              srcset=""
+            />
+          </a>
+          <nav>
+            <a
+              class="mx-2 text-lg font-medium text-gray-900 dark:text-sky-100 hover:text-sky-500 duration-[250ms]"
+              href="/"
+              >Home</a
+            >
+            <a
+              class="mx-2 text-lg font-medium text-gray-900 dark:text-sky-100 hover:text-sky-500 duration-[250ms]"
+              href="/posts"
+              >Posts</a
+            >
+            <a
+              class="mx-2 text-lg font-medium text-gray-900 dark:text-sky-100 hover:text-sky-500 duration-[250ms]"
+              href="/projects"
+              >Projects</a
+            >
+            <a
+              class="mx-2 text-lg font-medium text-gray-900 dark:text-sky-100 hover:text-sky-500 duration-[250ms]"
+              href="/about"
+              >About</a
+            >
+            <a
+              class="mx-2 text-lg font-medium text-gray-900 dark:text-sky-100 hover:text-sky-500 duration-[250ms]"
+              href="/contact"
+              >Contact</a
+            >
+          </nav>
+        </div>
+        <div class="darkmode relative w-11">
+          <i
+            id="moon"
+            class="fa-solid text-xl fa-moon text-gray-900 dark:text-sky-100 absolute top-2/4 left-2/4 -translate-x-2/4 -translate-y-2/4"
+          ></i>
+          <i
+            id="sun"
+            class="display-none fa-solid text-xl fa-sun-bright dark:text-sky-100 text-gray-900 absolute top-2/4 left-2/4 -translate-x-2/4 -translate-y-2/4"
+          ></i>
+        </div>
+      </section>
+    </header>
+    <section id="banner" class="md:min-h-[100vh] md:flex md:justify-center">
+      <div class="md:min-h-screen dark:bg-slate-900">
+        <div class="flex w-screen md:justify-center md:h-screen">
+          <div class="flex md:items-center">
+            <h1
+              class="max-md:text-3xl tracking-tight font-black md:text-[40px] md:leading-[6rem] text-slate-900 dark:text-sky-100"
+            >
+              <span
+                class="max-md:text-3xl tracking-tight font-black md:text-[60px] md:leading-[6rem] text-slate-900 dark:text-sky-100"
+              >
+                Hey !, I'm Minh Đức <br />
+              </span>
+              <span
+                class="bg-gradient-to-r from-blue-500 to-green-500 auto_text max-md:text-3xl tracking-tight font-black md:text-[40px] md:leading-[6rem] text-slate-900 dark:text-sky-100"
+              >
+                <span
+                  id="saydev"
+                  class="bg-gradient-to-r from-blue-500 to-green-500 auto_text max-md:text-3xl tracking-tight font-black md:text-[10px] md:leading-[6rem] text-slate-900 dark:text-sky-100"
+                >
+                </span>
+              </span>
+            </h1>
+          </div>
+          <div class="md:pt-9 md:pl-6 md:flex md:items-center">
+            <img src="../../src/images/person.png" />
+          </div>
+        </div>
+      </div>
+    </section>
+    <section
+      class="min-h-screen bg-[#F0F1F3] dark:bg-slate-900 dark:text-sky-100 text-gray-900"
+    >
+      <h1 class="font-bold text-2xl text-center">Home page</h1>
+    </section>
+    <footer
+      class="border-t bg-[#fbfbfb] border-black/[.2] dark:border-blue-100/[.1] w-full py-20 backdrop-blur-sm dark:bg-slate-900 dark:text-sky-100"
+    >
+      <h5
+        class="font-medium text-gray-900 text-base text-center dark:bg-slate-900 dark:text-sky-100"
+      >
+        &copy;lequangminhduc 2023 .Inc
+      </h5>
+    </footer>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.nicescroll/3.5.1/jquery.nicescroll.min.js"></script>
+    <script type="text/javascript">
+      document.addEventListener(
+        "touchstart",
+        (event) => {
+          // Do something
+          event.preventDefault();
+        },
+        { passive: false }
+      );
+      $("html").niceScroll({
+        cursorwidth: "10px",
+        scrollspeed: 60,
+      });
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
+    <script>
+      var typed = new Typed(".auto_text", {
+        strings: ["Developers Front-End !", "Developers Front-End !"],
+        startDelay: 0,
+        typeSpeed: 100,
+        backSpeed: 100,
+        loop: true,
+      });
+    </script>
+    <script type="text/javascript" src="main.js"></script>
+    <!-- <script type="text/javascript" src="bg.js"></script> -->
+  </body>
+</html>

@@ -1,0 +1,566 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Portfolio</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"
+      integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link
+      rel="stylesheet"
+      href="https://site-assets.fontawesome.com/releases/v6.2.1/css/all.css"
+    />
+    <link rel="stylesheet" href="build/tailwind.css" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="./build/app.css" />
+  </head>
+  <!-- dark:bg-zinc-900 dark:text-sky-100 dark:hover:text-sky-500 -->
+  <!-- light:bg-[#fbfbfb] light:text-gray-900  -->
+  <body class="bg-[#fbfbfb] dark:bg-zinc-900">
+    <header
+      class="border-b header border-blue-100/[.1] w-full blur-sm fixed bg-slate-900/[.1] backdrop-blur-sm z-50 md:filter-none"
+    >
+      <section class="max-w-6xl m-auto flex py-3">
+        <div id="menu" class="w-full flex items-center justify-between">
+          <a href="">
+            <img
+              class="w-12 rounded-full"
+              src="https://raw.githubusercontent.com/ogdp/vuesax-icon/main/d%20logoo%201.2.jpg"
+              alt=""
+              srcset=""
+            />
+          </a>
+          <nav>
+            <a
+              class="mx-2 text-lg font-medium text-gray-900 dark:text-sky-100 hover:text-sky-500 duration-[250ms]"
+              href="/"
+              >Home</a
+            >
+            <a
+              class="mx-2 text-lg font-medium text-gray-900 dark:text-sky-100 hover:text-sky-500 duration-[250ms]"
+              href="/posts"
+              >Posts</a
+            >
+            <a
+              class="mx-2 text-lg font-medium text-gray-900 dark:text-sky-100 hover:text-sky-500 duration-[250ms]"
+              href="/projects"
+              >Projects</a
+            >
+            <a
+              class="mx-2 text-lg font-medium text-gray-900 dark:text-sky-100 hover:text-sky-500 duration-[250ms]"
+              href="/about"
+              >About</a
+            >
+            <a
+              class="mx-2 text-lg font-medium text-gray-900 dark:text-sky-100 hover:text-sky-500 duration-[250ms]"
+              href="/contact"
+              >Contact</a
+            >
+          </nav>
+        </div>
+        <div class="darkmode relative w-11">
+          <i
+            id="moon"
+            class="fa-solid text-xl fa-moon text-gray-900 dark:text-sky-100 absolute top-2/4 left-2/4 -translate-x-2/4 -translate-y-2/4"
+          ></i>
+          <i
+            id="sun"
+            class="display-none fa-solid text-xl fa-sun-bright dark:text-sky-100 text-gray-900 absolute top-2/4 left-2/4 -translate-x-2/4 -translate-y-2/4"
+          ></i>
+        </div>
+      </section>
+    </header>
+    <section
+      class="min-h-screen pt-24 bg-[#F0F1F3] dark:bg-zinc-900 dark:text-sky-100 text-gray-900"
+    >
+      <h1 class="font-bold text-[2.56rem] my-7 mb-10 text-center">
+        My projects
+      </h1>
+      <form class="relative z-10" action="" method="post">
+        <div
+          class="flex items-center dark:bg-[#4d4d5021] justify-around max-w-6xl m-auto p-4 space-x-2 bg-white rounded-lg shadow-lg hover:shadow-xl transform hover:scale-[1.01] transition duration-200"
+        >
+          <div
+            class="flex bg-gray-100 dark:bg-[#2b2b2b] p-3 w-[65%] space-x-4 rounded-lg"
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              class="h-6 w-6 opacity-30"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"
+              />
+            </svg>
+            <input
+              class="bg-gray-100 dark:bg-[#2b2b2b] dark:text-sky-100 text-black outline-none w-full"
+              type="text"
+              placeholder="Article name or keyword..."
+            />
+          </div>
+          <div
+            class="relative flex justify-around py-3 px-4 bg-slate-700 w-[18%] rounded-lg text-sky-100 font-semibold cursor-pointer"
+          >
+            <span id="categories">All categories</span>
+
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              class="h-6 w-6"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M19 9l-7 7-7-7"
+              />
+            </svg>
+            <div
+              class="absolute top-[100%] min-w-full bg-slate-700 rounded-md left-0"
+            >
+              <div
+                class="flex my-1 mx-1 py-1 px-3 bg-slate-600 hover:bg-slate-500 rounded-lg text-sky-100 font-semibold cursor-pointer"
+              >
+                <span>React JS</span>
+              </div>
+              <div
+                class="flex my-1 mx-1 py-1 px-3 bg-slate-600 hover:bg-slate-500 rounded-lg text-sky-100 font-semibold cursor-pointer"
+              >
+                <span>PHP</span>
+              </div>
+              <div
+                class="flex my-1 mx-1 py-1 px-3 bg-slate-600 hover:bg-slate-500 rounded-lg text-sky-100 font-semibold cursor-pointer"
+              >
+                <span>React JS</span>
+              </div>
+            </div>
+          </div>
+
+          <div
+            class="bg-indigo-600 w-[20%] text-center py-3 px-5 text-white font-semibold rounded-lg hover:shadow-lg transition duration-3000 cursor-pointer"
+          >
+            <span><button type="submit">Search</button></span>
+          </div>
+        </div>
+      </form>
+
+      <section
+        class="max-w-6xl py-9 grid max-sm:gap-4 gap-16 grid-cols-3 max-sm:grid-cols-1 mx-auto items-stretch"
+      >
+        <div
+          class="mx-auto max-w-sm bg-white border border-gray-200 rounded-lg shadow-inner duration-500 max-sm:hover:scale-100 hover:scale-105 dark:bg-[#303033] dark:border-gray-700"
+        >
+          <a href="#" class="overflow-hidden h-64">
+            <div class="relative rounded-t-lg overflow-hidden h-64">
+              <img
+                class="rounded-t-lg w-full h-full scale-105 hover:scale-110 transition-all ease-in-out duration-500 object-cover"
+                src="../src/images/img_duan1.jpg"
+                alt=""
+              />
+            </div>
+          </a>
+          <div class="p-5">
+            <a href="#">
+              <h5
+                class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white"
+              >
+                Dự án 1
+              </h5>
+            </a>
+            <p
+              class="mb-3 font-normal text-gray-700 dark:text-gray-400"
+              style="
+                display: -webkit-box;
+                -webkit-line-clamp: 3;
+                -webkit-box-orient: vertical;
+                overflow: hidden;
+                text-overflow: ellipsis;
+                word-break: break-word;
+              "
+            >
+              Dự án về Fshop - shop bán áo quần thể thao Lorem ipsum dolor sit
+              amet consectetur adipisicing elit. Ipsam reiciendis deserunt
+              beatae repellat accusamus dolores ratione quasi, mollitia
+              voluptate, aliquam perspiciatis molestias.
+            </p>
+            <a href="">
+              <p
+                class="block text-right py-2 text-sm font-bold italic hover:underline cursor-pointer"
+              >
+                20/12/2023
+              </p>
+            </a>
+            <a
+              href="#"
+              class="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
+            >
+              Read more
+              <svg
+                aria-hidden="true"
+                class="w-4 h-4 ml-2 -mr-1"
+                fill="currentColor"
+                viewBox="0 0 20 20"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  fill-rule="evenodd"
+                  d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z"
+                  clip-rule="evenodd"
+                ></path>
+              </svg>
+            </a>
+          </div>
+        </div>
+        <div
+          class="mx-auto max-w-sm bg-white border border-gray-200 rounded-lg shadow-inner duration-500 max-sm:hover:scale-100 hover:scale-105 dark:bg-[#303033] dark:border-gray-700"
+        >
+          <a href="#" class="overflow-hidden h-64">
+            <div class="relative rounded-t-lg overflow-hidden h-64">
+              <img
+                class="rounded-t-lg w-full h-full scale-105 hover:scale-110 transition-all ease-in-out duration-500 object-cover"
+                src="../src/images/img_duan1.jpg"
+                alt=""
+              />
+            </div>
+          </a>
+          <div class="p-5">
+            <a href="#">
+              <h5
+                class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white"
+              >
+                Dự án 1
+              </h5>
+            </a>
+            <p
+              class="mb-3 font-normal text-gray-700 dark:text-gray-400"
+              style="
+                display: -webkit-box;
+                -webkit-line-clamp: 3;
+                -webkit-box-orient: vertical;
+                overflow: hidden;
+                text-overflow: ellipsis;
+                word-break: break-word;
+              "
+            >
+              Dự án về Fshop - shop bán áo quần thể thao Lorem ipsum dolor sit
+              amet consectetur adipisicing elit. Ipsam reiciendis deserunt
+              beatae repellat accusamus dolores ratione quasi, mollitia
+              voluptate, aliquam perspiciatis molestias.
+            </p>
+            <a href="">
+              <p
+                class="block text-right py-2 text-sm font-bold italic hover:underline cursor-pointer"
+              >
+                20/12/2023
+              </p>
+            </a>
+            <a
+              href="#"
+              class="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
+            >
+              Read more
+              <svg
+                aria-hidden="true"
+                class="w-4 h-4 ml-2 -mr-1"
+                fill="currentColor"
+                viewBox="0 0 20 20"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  fill-rule="evenodd"
+                  d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z"
+                  clip-rule="evenodd"
+                ></path>
+              </svg>
+            </a>
+          </div>
+        </div>
+        <div
+          class="mx-auto max-w-sm bg-white border border-gray-200 rounded-lg shadow-inner duration-500 max-sm:hover:scale-100 hover:scale-105 dark:bg-[#303033] dark:border-gray-700"
+        >
+          <a href="#" class="overflow-hidden h-64">
+            <div class="relative rounded-t-lg overflow-hidden h-64">
+              <img
+                class="rounded-t-lg w-full h-full scale-105 hover:scale-110 transition-all ease-in-out duration-500 object-cover"
+                src="../src/images/img_duan1.jpg"
+                alt=""
+              />
+            </div>
+          </a>
+          <div class="p-5">
+            <a href="#">
+              <h5
+                class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white"
+              >
+                Dự án 1
+              </h5>
+            </a>
+            <p
+              class="mb-3 font-normal text-gray-700 dark:text-gray-400"
+              style="
+                display: -webkit-box;
+                -webkit-line-clamp: 3;
+                -webkit-box-orient: vertical;
+                overflow: hidden;
+                text-overflow: ellipsis;
+                word-break: break-word;
+              "
+            >
+              Dự án về Fshop - shop bán áo quần thể thao Lorem ipsum dolor sit
+              amet consectetur adipisicing elit. Ipsam reiciendis deserunt
+              beatae repellat accusamus dolores ratione quasi, mollitia
+              voluptate, aliquam perspiciatis molestias.
+            </p>
+            <a href="">
+              <p
+                class="block text-right py-2 text-sm font-bold italic hover:underline cursor-pointer"
+              >
+                20/12/2023
+              </p>
+            </a>
+            <a
+              href="#"
+              class="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
+            >
+              Read more
+              <svg
+                aria-hidden="true"
+                class="w-4 h-4 ml-2 -mr-1"
+                fill="currentColor"
+                viewBox="0 0 20 20"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  fill-rule="evenodd"
+                  d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z"
+                  clip-rule="evenodd"
+                ></path>
+              </svg>
+            </a>
+          </div>
+        </div>
+        <div
+          class="mx-auto max-w-sm bg-white border border-gray-200 rounded-lg shadow-inner duration-500 max-sm:hover:scale-100 hover:scale-105 dark:bg-[#303033] dark:border-gray-700"
+        >
+          <a href="#" class="overflow-hidden h-64">
+            <div class="relative rounded-t-lg overflow-hidden h-64">
+              <img
+                class="rounded-t-lg w-full h-full scale-105 hover:scale-110 transition-all ease-in-out duration-500 object-cover"
+                src="../src/images/img_duan1.jpg"
+                alt=""
+              />
+            </div>
+          </a>
+          <div class="p-5">
+            <a href="#">
+              <h5
+                class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white"
+              >
+                Dự án 1
+              </h5>
+            </a>
+            <p
+              class="mb-3 font-normal text-gray-700 dark:text-gray-400"
+              style="
+                display: -webkit-box;
+                -webkit-line-clamp: 3;
+                -webkit-box-orient: vertical;
+                overflow: hidden;
+                text-overflow: ellipsis;
+                word-break: break-word;
+              "
+            >
+              Dự án về Fshop - shop bán áo quần thể thao Lorem ipsum dolor sit
+              amet consectetur adipisicing elit. Ipsam reiciendis deserunt
+              beatae repellat accusamus dolores ratione quasi, mollitia
+              voluptate, aliquam perspiciatis molestias.
+            </p>
+            <a href="">
+              <p
+                class="block text-right py-2 text-sm font-bold italic hover:underline cursor-pointer"
+              >
+                20/12/2023
+              </p>
+            </a>
+            <a
+              href="#"
+              class="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
+            >
+              Read more
+              <svg
+                aria-hidden="true"
+                class="w-4 h-4 ml-2 -mr-1"
+                fill="currentColor"
+                viewBox="0 0 20 20"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  fill-rule="evenodd"
+                  d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z"
+                  clip-rule="evenodd"
+                ></path>
+              </svg>
+            </a>
+          </div>
+        </div>
+        <!-- <div
+          class="mx-auto max-w-sm bg-white border border-gray-200 rounded-lg shadow-inner duration-500 max-sm:hover:scale-100 hover:scale-105 dark:bg-[#303033] dark:border-gray-700"
+        >
+          <a href="#" class="overflow-hidden h-64">
+            <div class="rounded-t-lg overflow-hidden h-64">
+              <img
+                class="rounded-t-lg w-full h-full scale-105 hover:scale-110 transition-all ease-in-out duration-500 object-cover"
+                src="../src/images/img_duan1.jpg"
+                alt=""
+              />
+            </div>
+          </a>
+          <div class="p-5">
+            <a href="#">
+              <h5
+                class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white"
+              >
+                Dự án 1
+              </h5>
+            </a>
+            <p
+              class="mb-3 font-normal text-gray-700 dark:text-gray-400"
+              style="
+                display: -webkit-box;
+                -webkit-line-clamp: 3;
+                -webkit-box-orient: vertical;
+                overflow: hidden;
+                text-overflow: ellipsis;
+                word-break: break-word;
+              "
+            >
+              Dự án về Fshop - shop bán áo quần thể thao Lorem ipsum dolor sit
+              amet consectetur adipisicing elit. Ipsam reiciendis deserunt
+              beatae repellat accusamus dolores ratione quasi, mollitia
+              voluptate, aliquam perspiciatis molestias.
+            </p>
+            <a href="">
+              <p
+                class="block text-right py-2 text-sm font-bold italic hover:underline cursor-pointer"
+              >
+                20/12/2023
+              </p>
+            </a>
+            <a
+              href="#"
+              class="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
+            >
+              Read more
+              <svg
+                aria-hidden="true"
+                class="w-4 h-4 ml-2 -mr-1"
+                fill="currentColor"
+                viewBox="0 0 20 20"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  fill-rule="evenodd"
+                  d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z"
+                  clip-rule="evenodd"
+                ></path>
+              </svg>
+            </a>
+          </div>
+        </div>
+        <div
+          class="mx-auto max-w-sm bg-white border border-gray-200 rounded-lg shadow-inner duration-500 max-sm:hover:scale-100 hover:scale-105 dark:bg-[#303033] dark:border-gray-700"
+        >
+          <a href="#" class="overflow-hidden h-64">
+            <div class="rounded-t-lg overflow-hidden h-64">
+              <img
+                class="rounded-t-lg w-full h-full scale-105 hover:scale-110 transition-all ease-in-out duration-500 object-cover"
+                src="../src/images/img_duan1.jpg"
+                alt=""
+              />
+            </div>
+          </a>
+          <div class="p-5">
+            <a href="#">
+              <h5
+                class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white"
+              >
+                Dự án 1
+              </h5>
+            </a>
+            <p
+              class="mb-3 font-normal text-gray-700 dark:text-gray-400"
+              style="
+                display: -webkit-box;
+                -webkit-line-clamp: 3;
+                -webkit-box-orient: vertical;
+                overflow: hidden;
+                text-overflow: ellipsis;
+                word-break: break-word;
+              "
+            >
+              Dự án về Fshop - shop bán áo quần thể thao Lorem ipsum dolor sit
+              amet consectetur adipisicing elit. Ipsam reiciendis deserunt
+              beatae repellat accusamus dolores ratione quasi, mollitia
+              voluptate, aliquam perspiciatis molestias.
+            </p>
+            <a href="">
+              <p
+                class="block text-right py-2 text-sm font-bold italic hover:underline cursor-pointer"
+              >
+                20/12/2023
+              </p>
+            </a>
+            <a
+              href="#"
+              class="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
+            >
+              Read more
+              <svg
+                aria-hidden="true"
+                class="w-4 h-4 ml-2 -mr-1"
+                fill="currentColor"
+                viewBox="0 0 20 20"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  fill-rule="evenodd"
+                  d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z"
+                  clip-rule="evenodd"
+                ></path>
+              </svg>
+            </a>
+          </div>
+        </div> -->
+      </section>
+    </section>
+    <footer
+      class="border-t bg-[#fbfbfb] border-black/[.2] dark:border-blue-100/[.1] w-full py-20 backdrop-blur-sm dark:bg-[#27282c] dark:text-sky-100"
+    >
+      <h5
+        class="font-medium text-gray-900 text-base text-center dark:text-sky-100"
+      >
+        &copy;lequangminhduc 2023 .Inc
+      </h5>
+    </footer>
+    <script type="text/javascript" src="main.js"></script>
+    <script type="text/javascript" src="bg.js"></script>
+    <script type="text/javascript">
+      (() => {
+        const categories = document.querySelector("#categories");
+      })();
+    </script>
+  </body>
+</html>

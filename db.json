@@ -1,0 +1,146 @@
+{
+  "nav": [
+    {
+      "id": 1,
+      "name": "About",
+      "link": "about"
+    },
+    {
+      "id": 2,
+      "name": "Posts",
+      "link": "post"
+    },
+    {
+      "id": 3,
+      "name": "Projects",
+      "link": "projects"
+    },
+    {
+      "id": 4,
+      "name": "Contact",
+      "link": "contact"
+    }
+  ],
+  "parkMXH": [
+    {
+      "id": 1,
+      "title": "GitHub",
+      "link": ""
+    },
+    {
+      "id": 2,
+      "title": "Facebook",
+      "link": ""
+    },
+    {
+      "id": 3,
+      "title": "Email",
+      "link": ""
+    }
+  ],
+  "banner": [
+    {
+      "subName": "Hey, I'm",
+      "name": "Minh Đức",
+      "specialized": "👑 Developers Front-End ! 🚀",
+      "link": "https://github.com/ogdp",
+      "titleBtn": "🎁 View MyCV",
+      "srcImg": "../../src/images/person.png"
+    }
+  ],
+  "posts": [
+    {
+      "id": 1,
+      "title": "Bài viết 1",
+      "author": "typicode",
+      "link": "",
+      "contents": "Lorem ipsum dolor sit amet, consectetur adip lorem ipsum dolor sit amet, consectetur adip",
+      "create_at": "10:16 | 14/02/2023"
+    },
+    {
+      "id": 2,
+      "title": "Bài viết 2",
+      "author": "typicode",
+      "link": "",
+      "contents": "Lorem ipsum dolor sit amet, consectetur adip lorem ipsum dolor sit amet, consectetur adip",
+      "create_at": "10:16 | 14/02/2023"
+    },
+    {
+      "id": 3,
+      "title": "Bài viết 3",
+      "author": "typicode",
+      "link": "",
+      "contents": "Lorem ipsum dolor sit amet, consectetur adip lorem ipsum dolor sit amet, consectetur adip",
+      "create_at": "10:16 | 14/02/2023"
+    },
+    {
+      "id": 4,
+      "title": "Bài viết 4",
+      "author": "typicode",
+      "link": "",
+      "contents": "Lorem ipsum dolor sit amet, consectetur adip lorem ipsum dolor sit amet, consectetur adip",
+      "create_at": "10:16 | 14/02/2023"
+    }
+  ],
+  "projects": [
+    {
+      "id": 1,
+      "title": "Dự án mẫu",
+      "namePro": "Xshop",
+      "content": "lorem ipsum dolor sit amet, consectetur adip lorem ipsum dolor sit amet, consectetur adip lorem ipsum dolor sit amet, consectetur adip",
+      "views": "178980",
+      "pricePro": "5000 - 10000$",
+      "member": ["Le Quang Minh Duc", "Minh Duc"],
+      "link": "https://github.com/ogdp",
+      "img": [
+        "https://raw.githubusercontent.com/ogdp/musicplayer/main/asset/image/2.jpg"
+      ],
+      "create_at": "10:16 | 14/02/2023"
+    },
+    {
+      "id": 2,
+      "title": "Dự án 1",
+      "namePro": "Fshop sports",
+      "content": "lorem ipsum dolor sit amet, consectetur adip lorem ipsum dolor sit amet, consectetur adip lorem ipsum dolor sit amet, consectetur adip",
+      "views": "178980",
+      "pricePro": "5000 - 10000$",
+      "member": ["Le Quang Minh Duc", "Minh Duc"],
+      "link": "https://github.com/ogdp",
+      "img": [
+        "https://raw.githubusercontent.com/ogdp/musicplayer/main/asset/image/2.jpg"
+      ],
+      "create_at": "10:16 | 14/02/2023"
+    },
+    {
+      "id": 3,
+      "title": "Dự án tốt nghiệp",
+      "namePro": "Xshop",
+      "content": "lorem ipsum dolor sit amet, consectetur adip lorem ipsum dolor sit amet, consectetur adip lorem ipsum dolor sit amet, consectetur adip",
+      "views": "178980",
+      "pricePro": "5000 - 10000$",
+      "member": ["Le Quang Minh Duc", "Minh Duc"],
+      "link": "https://github.com/ogdp",
+      "img": [
+        "https://raw.githubusercontent.com/ogdp/musicplayer/main/asset/image/2.jpg"
+      ],
+      "create_at": "10:16 | 14/02/2023"
+    },
+    {
+      "id": 4,
+      "title": "Portfolio",
+      "namePro": "Lê Quang Minh Đức",
+      "content": "lorem ipsum dolor sit amet, consectetur adip lorem ipsum dolor sit amet, consectetur adip lorem ipsum dolor sit amet, consectetur adip",
+      "views": "178980",
+      "pricePro": "5000 - 10000$",
+      "member": ["Le Quang Minh Duc"],
+      "link": "https://github.com/ogdp",
+      "img": [
+        "https://raw.githubusercontent.com/ogdp/musicplayer/main/asset/image/2.jpg"
+      ],
+      "create_at": "10:16 | 14/02/2023"
+    }
+  ],
+  "profile": {
+    "name": "typicode"
+  }
+}
