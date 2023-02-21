@@ -3,15 +3,21 @@ import axios from "axios";
 import { router, useEffect, useState } from "../../lib";
 const ProjectDetail = (id) => {
   const idItem = id;
-  const [project, setProject] = useState([]);
+  const [projectDetail, setProjectDetail] = useState([]);
+  const [checkGetData, setCheckGetData] = useState(false);
   useEffect(() => {
     fetch(`https://uo56vw-8080.preview.csb.app/projects/${idItem}`, {
       method: "GET",
     })
       .then((res) => res.json())
-      .then((resData) => setProject(resData))
+      .then((resData) => {
+        setProjectDetail(resData);
+        setCheckGetData(true);
+      })
       .catch((error) => console.log(error));
-  }, []);
+  }, [checkGetData]);
+  // console.log(idItem);
+  // console.log(projectDetail);
   const {
     title,
     namePro,
@@ -22,7 +28,7 @@ const ProjectDetail = (id) => {
     create_at,
     views,
     pricePro,
-  } = project;
+  } = projectDetail;
   useEffect(() => {
     const closeTab = document.querySelector(".closeTab");
     closeTab.addEventListener("click", () => {
@@ -31,7 +37,9 @@ const ProjectDetail = (id) => {
     });
   });
 
-  return `<section data-aos="zoom-out-up" 
+  return [
+    checkGetData,
+    `<section data-aos="zoom-out-up" 
       class="fixed w-full z-10 h-screen top-0 left-0 bg-white/[0.2] backdrop-blur-sm justify-center flex items-center scroll-auto"
     >
       <div
@@ -115,6 +123,7 @@ const ProjectDetail = (id) => {
           class="fa-brands fa-apple absolute caret-slate-900 top-[100%] left-[50%] -translate-x-[50%] -translate-y-[100%] pb-6 text-4xl"
         ></i>
       </div>
-    </section>`;
+    </section>`,
+  ];
 };
 export default ProjectDetail;

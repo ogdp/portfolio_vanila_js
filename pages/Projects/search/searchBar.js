@@ -12,16 +12,7 @@ const searchBar = ([submitSearch, onHandleClick]) => {
   useEffect(() => {
     getApi(url);
   }, []);
-  function searchKyw(string, kyw, obj) {
-    const outputs = [];
-    let strings = string.toLowerCase();
-    let search = `${kyw}`;
-    if (strings.includes(search.toLowerCase())) {
-      outputs.push(obj);
-    } else {
-    }
-    return outputs[0];
-  }
+
   useEffect(() => {
     const form = document.querySelector("#form_search");
     form.addEventListener("submit", (e) => {
@@ -45,7 +36,7 @@ const searchBar = ([submitSearch, onHandleClick]) => {
     // if (project.length > 0) {
     //   setProject(project);
     // }
-  }, []);
+  });
   return `
   <form id="form_search" class="relative z-10">
   <div

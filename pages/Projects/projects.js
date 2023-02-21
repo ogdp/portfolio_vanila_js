@@ -3,11 +3,13 @@ import { router, useEffect, useState } from "../../lib";
 import searchBar from "./search/searchBar";
 import card from "./card";
 const Projects = (params1, params2) => {
-  console.log("index project run");
+  // console.log("index project run");
   const [projectConfig, setProjectConfig] = useState([]);
   const [projects, setProjects] = useState([]);
   const [cardProjects, setCardProjects] = useState([]);
   const [checkLoad, setCheckLoad] = useState(0);
+  const [dataSearch, setDataSearch] = useState([]);
+  const [lastRender, setLastRender] = useState([]);
   let title = "";
   let btnViewMore = "";
   let cardInner = "";
@@ -21,6 +23,7 @@ const Projects = (params1, params2) => {
     ])
       .then(([res1, res2]) => Promise.all([res1.json(), res2.json()]))
       .then(([data1, data2]) => {
+        setDataSearch(data2);
         setProjectConfig(data1[0]);
         setProjects(data2);
         setCheckLoad(checkLoad + 1);
@@ -42,11 +45,43 @@ const Projects = (params1, params2) => {
         .then((data) => setProjects(data.projects));
     }
   };
+  function searchKyw(string, kyw, obj) {
+    const outputs = [];
+    let strings = string.toLowerCase();
+    let search = `${kyw}`;
+    if (strings.includes(search.toLowerCase())) {
+      outputs.push(obj);
+    } else {
+    }
+    return outputs[0];
+  }
   const submitSearch = (kyw) => {
-    console.log(kyw);
+    fetch(`https://uo56vw-8080.preview.csb.app/projects`)
+      .then((response) => response.json())
+      .then((data) => setDataSearch(data))
+      .catch((error) => console.log(error));
+    setProjects(dataSearch.filter((item) => searchKyw(item.title, kyw, item)));
+    console.log(projects);
+    console.log(dataSearch);
+    if (projects.length == 0) {
+      setProjects(dataSearch);
+    }
   };
+
   if (checkLoad == 1) {
     title = `<h1 class="md:py-10 md:pt-[120px] md:pb-14 max-md:pb-8 font-bold text-4xl md:text-[50px] text-center dark:text-sky-100">${projectConfig.title}</h1>`;
+    if (projects.length > 0) {
+      useEffect(() => {
+        const items = document.querySelectorAll("#item");
+        items.forEach((item) => {
+          item.addEventListener("click", () => {
+            const idItem = item.dataset.id;
+            router.navigate(`/projects/${idItem}`);
+          });
+        });
+      });
+    }
+    if (projects.length == 0) setProjects(dataSearch);
     if (params2?.map((item) => item.limitedCard == 3)) {
       const lastThree = [...projects].reverse().slice(0, 3);
       cardInner = lastThree?.map((item) => card([item])).join("");
@@ -75,7 +110,15 @@ const Projects = (params1, params2) => {
       });
     }, []);
   }
+  if (checkLoad == 1) {
+    setTimeout(() => {
+      document.querySelector("#loadding").style.display = "none";
+    }, 3000);
+  }
   return /*html*/ `
+      <div id="loadding" class="fixed top-0 left-0 right-0 min-w-full min-h-screen backdrop-blur-[5px] bg-slate-900 z-[1999]"><div class="absolute right-1/2 bottom-1/2  transform translate-x-1/2 translate-y-1/2 ">
+      <div class="z-[2000] border-t-transparent border-solid animate-spin  rounded-full border-blue-400 border-8 h-[54px] w-[54px]"></div>
+  </div></div>
       <section id="projects" class="md:pb-[3rem] bg-[#F0F1F3] dark:bg-zinc-900 dark:text-sky-100 text-gray-900">
         ${title}
         ${searchBarInner}
