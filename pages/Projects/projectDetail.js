@@ -113,7 +113,7 @@ const ProjectDetail = (id) => {
           ${listImgs}
           </div>
           <div
-            class="max-sm:w-[100%] w-[90%] mx-auto py-3 pt-2 pb-5 px-[.2rem]"
+            class="max-sm:w-[100%] w-[90%] dark:text-neutral-50 mx-auto py-3 pt-2 pb-5 px-[.2rem]"
           >
             <h2 class="dark:text-neutral-50 font-semibold my-2">
               Giới thiệu website:
