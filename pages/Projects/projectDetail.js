@@ -57,11 +57,12 @@ const ProjectDetail = (id) => {
     });
   });
 
-  let anhBia = "";
   const [listImgs, setListImgs] = useState("");
+  const [anhBia, setAnhBia] = useState("");
   useEffect(() => {
     if (checkGetData == true && img.length >= 1) {
-      anhBia = img[0];
+      let aBia = `<img src="${img[0]}"alt="Lỗi tải hình ảnh" class="mx-auto max-sm:w-[100%] w-[90%]"srcset=""/>`;
+      setAnhBia(aBia);
       let cc = "";
       for (let index = 1; index < img.length; index++) {
         cc =
@@ -98,16 +99,7 @@ const ProjectDetail = (id) => {
           class="w-[100%] h-[85%] overflow-x-hidden overflow-y-auto border-2 border-red-900/[.7] rounded-md"
         >
           <div class="mt-3">
-            <img
-              src="${(() => {
-                if (checkGetData == true && img.length >= 1) {
-                  return img[0];
-                }
-              })()}"
-              alt=""
-              class="mx-auto max-sm:w-[100%] w-[90%]"
-              srcset=""
-            />
+            ${anhBia}
           </div>
           <div
             class="bg-zinc-400/[.5] rounded-b-md max-sm:w-[100%] w-[90%] mx-auto"
