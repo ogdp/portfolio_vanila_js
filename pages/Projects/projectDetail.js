@@ -61,7 +61,7 @@ const ProjectDetail = (id) => {
   const [anhBia, setAnhBia] = useState("");
   useEffect(() => {
     if (checkGetData == true && img.length >= 1) {
-      let aBia = `<img src="${img[0]}"alt="Lỗi tải hình ảnh" class="mx-auto max-sm:w-[100%] w-[90%]"srcset=""/>`;
+      let aBia = `<img src="${img[0]}" alt="Lỗi tải hình ảnh" class="mx-auto max-sm:w-[100%] w-[90%]"/>`;
       setAnhBia(aBia);
       let cc = "";
       for (let index = 1; index < img.length; index++) {

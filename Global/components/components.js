@@ -14,6 +14,7 @@ import AdminProjectsEdit from "../../pages/Admin/Projects/edit";
 import AdminProjectsAdd from "../../pages/Admin/Projects/add";
 import AdminAbout from "../../pages/Admin/About";
 import AdminContacts from "../../pages/Admin/Contacts";
+import AdminHeader from "../../pages/Admin/Header";
 export {
   Header,
   Footer,
@@ -25,6 +26,7 @@ export {
   Contact,
   Posts,
   Admin,
+  AdminHeader,
   AdminProjects,
   AdminProjectsAdd,
   AdminProjectsEdit,

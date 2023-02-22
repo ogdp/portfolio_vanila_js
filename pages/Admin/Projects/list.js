@@ -15,7 +15,8 @@ const list = () => {
         console.error(err);
       }
     };
-    fetchData();
+    setTimeout(() => fetchData(), 2000);
+    // fetchData();
   }, []);
   useEffect(() => {
     // Edit projects
@@ -113,7 +114,7 @@ const list = () => {
   <h1
     class="md:py-10 md:pb-14 font-bold text-2xl md:text-[50px] text-center dark:text-sky-100"
   >
-    Dự án
+    Quản lý dự án
   </h1>
   <div class=" py-4">
   <a href="#/admin/projects/add" type="button" class="text-white gap-2 bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center inline-flex items-center mr-2 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">

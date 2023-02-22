@@ -16,8 +16,6 @@ const Banner = () => {
       })
       .catch((err) => console.error(err));
   }, []);
-  console.log(checkLoad);
-  console.log("banner");
   if (checkLoad == 1) {
     const { name, specialized, link, subName, titleBtn, srcImg } = dataBanner;
     titleBanner = `

@@ -10,6 +10,7 @@ import {
   Contact,
   Posts,
   Admin,
+  AdminHeader,
   AdminProjects,
   AdminProjectsAdd,
   AdminProjectsEdit,
@@ -31,20 +32,6 @@ app2.component("font-awesome-icon", FontAwesomeIcon);
 app2.mount("#app");
 // ---------
 router.on("/", () => render(app, Home));
-// router.on("/projects", (params) =>
-//   render(app, (params) => {
-//     if (typeof Projects === "function") {
-//       return (
-//         Header() +
-//         `<div class="min-w-full h-[88px]"></div>` +
-//         Projects(params) +
-//         Footer()
-//       );
-//     } else {
-//       return Header() + Projects + Footer();
-//     }
-//   })
-// );
 router.on("/projectsList", () => render(app, indexProject));
 router.on("/projects/:id", ({ data }) => {
   const id = data.id;
@@ -62,17 +49,24 @@ router.on("/projects/:id", ({ data }) => {
 // router.on("/postsDetail/:id", () => render(app, PostsDetail));
 // router.notFound(() => render(app, () => console.log("NotFound")));
 // ---Admin ----
-router.on("/admin/", () => render(app, Admin));
-router.on("/admin/projects", () => render(app, AdminProjects));
-router.on("/admin/projects/add", () => render(app, AdminProjectsAdd));
+router.on("/admin/", () => render(app, () => AdminHeader()));
+router.on("/admin/about", () =>
+  render(app, () => AdminHeader() + AdminAbout())
+);
+router.on("/admin/projects", () =>
+  render(app, () => AdminHeader() + AdminProjects())
+);
+router.on("/admin/projects/add", () =>
+  render(app, () => AdminHeader() + AdminProjectsAdd())
+);
 router.on("/admin/projects/:id/:action", ({ data }) => {
   const id = data.id;
   render(app, () => {
     if (typeof AdminProjectsEdit == "function") {
       // console.log(typeof AdminProjectsEdit);
-      return AdminProjectsEdit(id);
+      return AdminHeader() + AdminProjectsEdit(id);
     } else {
-      return AdminProjectsEdit;
+      return AdminHeader() + AdminProjectsEdit;
     }
   });
 });
