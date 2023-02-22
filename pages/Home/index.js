@@ -10,6 +10,17 @@ import GotoTop from "./gotoTop";
 import AOS from "aos";
 import "aos/dist/aos.css";
 const Home = () => {
+  (() => {
+    var script = document.createElement("script");
+    script.innerHTML = `$("html").niceScroll({
+      cursorwidth: "10px",
+      scrollspeed: 260,
+      smoothscroll: true,
+      spacebarenabled: true,
+    });
+    $("html").getNiceScroll().hide();`;
+    document.body.appendChild(script);
+  })();
   function loadCSS(src) {
     const link = document.createElement("link");
     link.rel = "stylesheet";

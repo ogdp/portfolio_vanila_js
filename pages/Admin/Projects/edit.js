@@ -335,7 +335,7 @@ const edit = (id) => {
   </span>
 </a>
   </div>
-    <form id="form_edit" class="m-auto w-full flex flex-col gap-2">
+    <form id="form_edit" class="pb-10 m-auto w-full flex flex-col gap-2">
       ${dataProject}
       <div class="flex max-w-xs m-auto gap-4 pt-10">
             <button data-set="${id}" 

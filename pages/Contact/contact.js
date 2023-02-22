@@ -66,7 +66,7 @@ const Contact = () => {
       </label>
       <label class="block">
         <h5 class="mb-1 text-[19px] font-normal">Email address</h5>
-        <input id="email_contact" type="email" placeholder="abc@email.com" class="text-[18px] px-4 py-2 block w-full rounded-md shadow-sm focus:ring focus:outline-none focus:ring-opacity-75 focus:ring-violet-400 dark:bg-gray-800"  />
+        <input id="email_contact" type="text" placeholder="abc@email.com" class="text-[18px] px-4 py-2 block w-full rounded-md shadow-sm focus:ring focus:outline-none focus:ring-opacity-75 focus:ring-violet-400 dark:bg-gray-800"  />
         <h5 id="notification_email" class="text-red-600 pt-1 px-2 text-sm font-bold truncate-[1]">
           
         </h5>
