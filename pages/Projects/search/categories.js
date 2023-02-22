@@ -26,14 +26,9 @@ const categories = (onHandleClick) => {
       console.error(error);
     }
   }
-
-  useEffect(() => {
-    fetchData();
-  }, [checkLoad]);
-
   if (checkLoad == true) {
     categoryInner = data
-      ?.map(
+      .map(
         (item) => `
     <div data-id="${item.id}" class="category_btn flex my-1 mx-1 py-1 px-3 bg-slate-600 hover:bg-slate-500 rounded-lg text-sky-100 font-semibold cursor-pointer">
     <span>${item.title}</span>
@@ -41,6 +36,10 @@ const categories = (onHandleClick) => {
       )
       .join("");
   }
+  useEffect(() => {
+    fetchData();
+  }, [checkLoad]);
+
   useEffect(() => {
     getCategory();
   });

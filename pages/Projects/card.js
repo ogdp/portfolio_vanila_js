@@ -26,7 +26,7 @@ const card = (projects) => {
             <div class="relative rounded-t-lg overflow-hidden h-64">
                 <img
                 class="rounded-t-lg w-full h-full scale-105 hover:scale-110 transition-all ease-in-out duration-500 object-cover"
-                src="${img}"
+                src="${img[0]}"
                 alt=""
                 />
             </div>
