@@ -14,6 +14,7 @@ import {
   AdminProjects,
   AdminProjectsAdd,
   AdminProjectsEdit,
+  AdminProjectsCategory,
   AdminAbout,
   AdminContacts,
 } from "./Global/components/components";
@@ -58,6 +59,9 @@ router.on("/admin/projects", () =>
 );
 router.on("/admin/projects/add", () =>
   render(app, () => AdminHeader() + AdminProjectsAdd())
+);
+router.on("/admin/projects/cate", () =>
+  render(app, () => AdminHeader() + AdminProjectsCategory())
 );
 router.on("/admin/projects/:id/:action", ({ data }) => {
   const id = data.id;

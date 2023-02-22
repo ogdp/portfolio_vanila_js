@@ -4,6 +4,20 @@ const list = () => {
   const api = "https://uo56vw-8080.preview.csb.app/projects";
   const [projects, setProjects] = useState([]);
   const [checkLoad, setCheckLoad] = useState(false);
+  const [cate, setCate] = useState([]);
+  useEffect(() => {
+    (async () => {
+      try {
+        const { data } = await axios.get(
+          "https://uo56vw-8080.preview.csb.app/categories/"
+        );
+        setCate(data);
+      } catch (error) {
+        console.log(error);
+      }
+    })();
+  }, []);
+  console.log(cate);
   useEffect(() => {
     const fetchData = async () => {
       try {
@@ -124,6 +138,7 @@ const list = () => {
   </span>
 </a>
 <button type="button" id="btnRemoves" class="focus:outline-none text-white bg-red-700 hover:bg-red-800 focus:ring-4 focus:ring-red-300 font-medium rounded-lg text-sm px-5 py-2.5 mr-2 mb-2 dark:bg-red-600 dark:hover:bg-red-700 dark:focus:ring-red-900">Xoá mục đã chọn</button>
+<a href="#/admin/projects/cate" class="focus:outline-none text-white bg-yellow-400 hover:bg-yellow-500 focus:ring-4 focus:ring-yellow-300 font-medium rounded-lg text-sm px-5 py-2.5 mr-2 mb-2 dark:focus:ring-yellow-900">Quản lý danh mục</a>
   </div>
   <div class="container_about flex justify-center items-center relative">
   <div id="loadding" class="absolute -z-10 flex items-center justify-center min-w-full min-h-full border border-gray-200 rounded-lg bg-gray-50 opacity-90 dark:bg-gray-800 dark:border-gray-700">
@@ -149,6 +164,9 @@ const list = () => {
         </th>
         <th class="text-lg border border-slate-200 py-2 text-center px-2">
           Thành viên tham gia
+        </th>
+        <th class="text-lg border border-slate-200 py-2 text-center px-2">
+          Danh mục
         </th>
         <th class="text-lg border border-slate-200 py-2 text-center px-2">
           Ngày phát triển
@@ -182,6 +200,11 @@ const list = () => {
                 })()}</td>
                 <td class="border border-slate-200 py-3 px-2">
                 ${item.member}
+                </td>
+                <td class="border border-slate-200 py-3 px-2">
+                ${(() =>
+                  cate?.filter((item2) => item2.id == item.categoryId)[0]
+                    .title)()}
                 </td>
                 <td class="border border-slate-200 py-3 px-2">${(() => {
                   let selectedDate = new Date(item.create_at);

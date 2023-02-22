@@ -12,6 +12,7 @@ import Admin from "../../pages/Admin";
 import AdminProjects from "../../pages/Admin/Projects/list";
 import AdminProjectsEdit from "../../pages/Admin/Projects/edit";
 import AdminProjectsAdd from "../../pages/Admin/Projects/add";
+import AdminProjectsCategory from "../../pages/Admin/Projects/category";
 import AdminAbout from "../../pages/Admin/About";
 import AdminContacts from "../../pages/Admin/Contacts";
 import AdminHeader from "../../pages/Admin/Header";
@@ -30,6 +31,7 @@ export {
   AdminProjects,
   AdminProjectsAdd,
   AdminProjectsEdit,
+  AdminProjectsCategory,
   AdminAbout,
   AdminContacts,
 };
