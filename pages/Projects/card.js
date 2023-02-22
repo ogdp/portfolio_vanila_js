@@ -1,18 +1,26 @@
 const card = (projects) => {
-  //   data-aos="flip-right"
-  //   data-aos-offset="100"
-  //   data-aos-delay="50"
-  //   data-aos-duration="500"
-  //   data-aos-easing="ease-in-out"
-  //   data-aos-mirror="true"
-  //   data-aos-once="false"
-  //   data-aos-anchor-placement="top-center"
+  // data-aos="flip-right"
+  // data-aos-offset="100"
+  // data-aos-delay="50"
+  // data-aos-duration="500"
+  // data-aos-easing="ease-in-out"
+  // data-aos-mirror="true"
+  // data-aos-once="false"
+  // data-aos-anchor-placement="top-center"
   return `
   ${projects
     ?.map((item) => {
+      let cc = "";
       const { id, title, img, member, content, create_at, link } = item;
       return `
-    <div id="item" data-id="${id}" class="cursor-pointer mx-auto max-w-sm bg-white border border-gray-200 rounded-lg shadow-inner duration-500 max-sm:hover:scale-100 hover:scale-105 dark:bg-[#303033] dark:border-gray-700"
+    <div   data-aos="flip-right"
+    data-aos-offset="100"
+    data-aos-delay="50"
+    data-aos-duration="500"
+    data-aos-easing="ease-in-out"
+    data-aos-mirror="true"
+    data-aos-once="false"
+    data-aos-anchor-placement="top-center" id="item" data-id="${id}" class="cursor-pointer mx-auto max-w-sm bg-white border border-gray-200 rounded-lg shadow-inner duration-500 max-sm:hover:scale-100 hover:scale-105 dark:bg-[#303033] dark:border-gray-700"
             >
             <a class="overflow-hidden h-64">
             <div class="relative rounded-t-lg overflow-hidden h-64">
@@ -47,15 +55,38 @@ const card = (projects) => {
                 overflow: hidden;
                 text-overflow: ellipsis;
                 word-break: break-word;
-                "
-            >
+                ">
+                <p>
+                <div class="mb-3 font-normal text-gray-700 dark:text-gray-400"
+                style="
+                display: -webkit-box;
+                -webkit-line-clamp: 3;
+                -webkit-box-orient: vertical;
+                overflow: hidden;
+                text-overflow: ellipsis;
+                word-break: break-word;
+                ">
                 ${content}
+                </div>
+                </p>
             </p>
             <a "/#/projects/${id}">
                 <p
                 class="block text-right py-2 text-sm font-bold italic hover:underline cursor-pointer"
                 >
-                ${create_at}
+                ${(() => {
+                  let selectedDate = new Date(create_at);
+                  const formattedDate = selectedDate.toLocaleDateString(
+                    "vi-VN",
+                    {
+                      weekday: "long",
+                      year: "numeric",
+                      month: "long",
+                      day: "numeric",
+                    }
+                  );
+                  return formattedDate;
+                })()}
                 </p>
             </a>
             <a

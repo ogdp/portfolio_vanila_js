@@ -10,17 +10,17 @@ import GotoTop from "./gotoTop";
 import AOS from "aos";
 import "aos/dist/aos.css";
 const Home = () => {
-  // function loadCSS(src) {
-  //   const link = document.createElement("link");
-  //   link.rel = "stylesheet";
-  //   link.type = "text/css";
-  //   link.href = `${src}`;
-  //   document.head.appendChild(link);
-  // }
-  // useEffect(() => {
-  //   loadCSS("./src/css/style.css");
-  //   loadCSS("./src/css/home.css");
-  // }, []);
+  function loadCSS(src) {
+    const link = document.createElement("link");
+    link.rel = "stylesheet";
+    link.type = "text/css";
+    link.href = `${src}`;
+    document.head.appendChild(link);
+  }
+  useEffect(() => {
+    loadCSS("./src/css/style.css");
+    loadCSS("./src/css/home.css");
+  }, []);
   // AOS.init();
   // console.log("ddd");
   return ` 

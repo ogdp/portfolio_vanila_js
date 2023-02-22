@@ -7,6 +7,13 @@ import Contact from "../../pages/Contact/contact";
 import Posts from "../../pages/Posts/Posts";
 import ProjectDetail from "../../pages/Projects/projectDetail";
 import indexProject from "../../pages/Projects/";
+// Admin
+import Admin from "../../pages/Admin";
+import AdminProjects from "../../pages/Admin/Projects/list";
+import AdminProjectsEdit from "../../pages/Admin/Projects/edit";
+import AdminProjectsAdd from "../../pages/Admin/Projects/add";
+import AdminAbout from "../../pages/Admin/About";
+import AdminContacts from "../../pages/Admin/Contacts";
 export {
   Header,
   Footer,
@@ -17,4 +24,10 @@ export {
   About,
   Contact,
   Posts,
+  Admin,
+  AdminProjects,
+  AdminProjectsAdd,
+  AdminProjectsEdit,
+  AdminAbout,
+  AdminContacts,
 };

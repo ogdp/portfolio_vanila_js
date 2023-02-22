@@ -18,3 +18,12 @@ video {
 body {
   min-height: 100vh;
 }
+::-webkit-scrollbar {
+  width: 0.45rem;
+  background-color: rgba(0, 0, 0, 0.712);
+}
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: rgba(41, 40, 40, 0.808);
+  border-radius: 6px;
+}

@@ -5,16 +5,33 @@ const categories = (onHandleClick) => {
   const [data, setData] = useState([]);
   const [checkLoad, setCheckLoad] = useState(false);
   let categoryInner = "";
+  // useEffect(() => {
+  //   fetch("https://uo56vw-8080.preview.csb.app/categories")
+  //     .then((response) => response.json())
+  //     .then((data) => {
+  //       setData(data);
+  //       setCheckLoad(true);
+  //     })
+  //     .catch((error) => console.error(error));
+  // }, [checkLoad]);
+  async function fetchData() {
+    try {
+      const response = await fetch(
+        "https://uo56vw-8080.preview.csb.app/categories"
+      );
+      const data = await response.json();
+      setData(data);
+      setCheckLoad(true);
+    } catch (error) {
+      console.error(error);
+    }
+  }
+
   useEffect(() => {
-    fetch("https://uo56vw-8080.preview.csb.app/categories")
-      .then((response) => response.json())
-      .then((data) => {
-        setData(data);
-        setCheckLoad(true);
-      })
-      .catch((error) => console.error(error));
+    fetchData();
   }, [checkLoad]);
-  if (checkLoad) {
+
+  if (checkLoad == true) {
     categoryInner = data
       ?.map(
         (item) => `

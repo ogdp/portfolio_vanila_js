@@ -5,19 +5,39 @@ const ProjectDetail = (id) => {
   const idItem = id;
   const [projectDetail, setProjectDetail] = useState([]);
   const [checkGetData, setCheckGetData] = useState(false);
-  useEffect(() => {
-    fetch(`https://uo56vw-8080.preview.csb.app/projects/${idItem}`, {
-      method: "GET",
-    })
-      .then((res) => res.json())
-      .then((resData) => {
-        setProjectDetail(resData);
-        setCheckGetData(true);
-      })
-      .catch((error) => console.log(error));
+  // useEffect(() => {
+
+  //   fetch(`https://uo56vw-8080.preview.csb.app/projects/${idItem}`, {
+  //     method: "GET",
+  //   })
+  //     .then((res) => res.json())
+  //     .then((resData) => {
+  //       setProjectDetail(resData);
+  //       setCheckGetData(true);
+  //     })
+  //     .catch((error) => console.log(error));
+  // }, [checkGetData]);
+  useEffect(async () => {
+    try {
+      const response = await fetch(
+        `https://uo56vw-8080.preview.csb.app/projects/${idItem}`,
+        {
+          method: "GET",
+        }
+      );
+
+      if (!response.ok) {
+        throw new Error("Network response was not ok");
+      }
+
+      const resData = await response.json();
+      setProjectDetail(resData);
+      setCheckGetData(true);
+    } catch (error) {
+      console.log(error);
+    }
   }, [checkGetData]);
-  // console.log(idItem);
-  // console.log(projectDetail);
+
   const {
     title,
     namePro,
@@ -32,18 +52,32 @@ const ProjectDetail = (id) => {
   useEffect(() => {
     const closeTab = document.querySelector(".closeTab");
     closeTab.addEventListener("click", () => {
-      window.history.back();
-      // router.navigate("/projects");
+      // window.history.back();
+      router.navigate("/projectsList");
     });
   });
 
+  let anhBia = "";
+  const [listImgs, setListImgs] = useState("");
+  useEffect(() => {
+    if (checkGetData == true && img.length >= 1) {
+      anhBia = img[0];
+      let cc = "";
+      for (let index = 1; index < img.length; index++) {
+        cc =
+          cc +
+          `<div class="flex justify-center items-center object-cover h-48 overflow-hidden" ><img src="${img[index]}" alt="Image 1" class="min-w-[120%]"/></div>`;
+      }
+      setListImgs(cc);
+    }
+  }, [checkGetData]);
   return [
     checkGetData,
     `<section data-aos="zoom-out-up" 
       class="fixed w-full z-10 h-screen top-0 left-0 bg-white/[0.2] backdrop-blur-sm justify-center flex items-center scroll-auto"
     >
       <div
-        class="max-sm:w-[96%] w-3/5 h-[80%] py-14 pt-3 rounded-lg max-sm:px-3 px-12 
+        class="shadow-[rgba(0,0,0,0.24)_0px_3px_8px] max-sm:w-[96%] w-3/5 h-[80%] py-14 pt-3 rounded-lg max-sm:px-3 px-12 
         bg-slate-100/[.9] dark:dark:bg-[#303033] backdrop-blur-2xl dark:text-white-100 scroll-auto"
       >
         <h2
@@ -65,7 +99,11 @@ const ProjectDetail = (id) => {
         >
           <div class="mt-3">
             <img
-              src="${img}"
+              src="${(() => {
+                if (checkGetData == true && img.length >= 1) {
+                  return img[0];
+                }
+              })()}"
               alt=""
               class="mx-auto max-sm:w-[100%] w-[90%]"
               srcset=""
@@ -78,6 +116,9 @@ const ProjectDetail = (id) => {
               Hình ảnh giao diện trang chủ website
               <a href="${link}" class="dark:text-neutral-50 underline">${namePro}</a>
             </p>
+          </div>
+          <div class="w-full px-1 py-2 grid grid-cols-4 gap-1">
+          ${listImgs}
           </div>
           <div
             class="max-sm:w-[100%] w-[90%] mx-auto py-3 pt-2 pb-5 px-[.2rem]"
@@ -94,7 +135,7 @@ const ProjectDetail = (id) => {
             </h2>
             <p class="dark:text-neutral-50">
               Thống kê lượt truy cập đến thời điểm hiện tại:
-              <span class="dark:text-neutral-50 font-semibold"> ${views} view </span>
+              <span class="dark:text-neutral-50 font-semibold"> ${views} <i class="fa-duotone fa-eye mx-1"></i> </span>
             </p>
             <p class="dark:text-neutral-50">Ngày tạo: <span class=" font-semibold">${create_at}</span></p>
             <p class="dark:text-neutral-50">

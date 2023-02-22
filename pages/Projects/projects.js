@@ -14,21 +14,46 @@ const Projects = (params1, params2) => {
   let btnViewMore = "";
   let cardInner = "";
   let searchBarInner = "";
+  // useEffect(() => {
+  //   Promise.all([
+  //     fetch("https://uo56vw-8080.preview.csb.app/projectsConfig", {
+  //       method: "GET",
+  //     }),
+  //     fetch("https://uo56vw-8080.preview.csb.app/projects", { method: "GET" }),
+  //   ])
+  //     .then(([res1, res2]) => Promise.all([res1.json(), res2.json()]))
+  //     .then(([data1, data2]) => {
+  //       setDataSearch(data2);
+  //       setProjectConfig(data1[0]);
+  //       setProjects(data2);
+  //       setCheckLoad(checkLoad + 1);
+  //     })
+  //     .catch((err) => console.log(err));
+  // }, []);
+  async function fetchData() {
+    try {
+      const [res1, res2] = await Promise.all([
+        fetch("https://uo56vw-8080.preview.csb.app/projectsConfig", {
+          method: "GET",
+        }),
+        fetch("https://uo56vw-8080.preview.csb.app/projects", {
+          method: "GET",
+        }),
+      ]);
+
+      const [data1, data2] = await Promise.all([res1.json(), res2.json()]);
+
+      setDataSearch(data2);
+      setProjectConfig(data1[0]);
+      setProjects(data2);
+      setCheckLoad(checkLoad + 1);
+    } catch (err) {
+      console.log(err);
+    }
+  }
+
   useEffect(() => {
-    Promise.all([
-      fetch("https://uo56vw-8080.preview.csb.app/projectsConfig", {
-        method: "GET",
-      }),
-      fetch("https://uo56vw-8080.preview.csb.app/projects", { method: "GET" }),
-    ])
-      .then(([res1, res2]) => Promise.all([res1.json(), res2.json()]))
-      .then(([data1, data2]) => {
-        setDataSearch(data2);
-        setProjectConfig(data1[0]);
-        setProjects(data2);
-        setCheckLoad(checkLoad + 1);
-      })
-      .catch((err) => console.log(err));
+    fetchData();
   }, []);
   const onHandleClick = (id) => {
     if (Number(id) == 0) {
@@ -110,13 +135,16 @@ const Projects = (params1, params2) => {
       });
     }, []);
   }
+  // useEffect(async ()=>{
+  //   const
+  // })
   if (checkLoad == 1) {
     setTimeout(() => {
       document.querySelector("#loadding").style.display = "none";
     }, 3000);
   }
   return /*html*/ `
-      <div id="loadding" class="fixed top-0 left-0 right-0 min-w-full min-h-screen backdrop-blur-[5px] bg-slate-900 z-[1999]"><div class="absolute right-1/2 bottom-1/2  transform translate-x-1/2 translate-y-1/2 ">
+      <div id="loadding" class="fixed top-0 left-0 right-0 min-w-full min-h-screen backdrop-blur-[5px] dark:bg-slate-900 bg-[#fbfbfb]  z-[1999]"><div class="absolute right-1/2 bottom-1/2  transform translate-x-1/2 translate-y-1/2 ">
       <div class="z-[2000] border-t-transparent border-solid animate-spin  rounded-full border-blue-400 border-8 h-[54px] w-[54px]"></div>
   </div></div>
       <section id="projects" class="md:pb-[3rem] bg-[#F0F1F3] dark:bg-zinc-900 dark:text-sky-100 text-gray-900">

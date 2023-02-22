@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Portfolio</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"
+      integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link
+      rel="stylesheet"
+      href="https://site-assets.fontawesome.com/releases/v6.2.1/css/all.css"
+    />
+    <link rel="stylesheet" href="build/tailwind.css" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="./build/app.css" />
+    <link rel="stylesheet" href="../src/css/home.css" />
+  </head>
+  <style>
+    #container {
+      width: 1000px;
+      margin: 20px auto;
+    }
+    .ck-editor__editable[role="textbox"] {
+      /* editing area */
+      min-height: 200px;
+    }
+    .ck-content .image {
+      /* block images */
+      max-width: 80%;
+      margin: 20px auto;
+    }
+  </style>
+  <body class="bg-[#fbfbfb] dark:bg-[#1D1F20]">
+    <div class="min-w-full h-[88px]"></div>
+    <div></div>
+    <section class="min-h-screen dark:text-sky-100 dark:#1d1f20">
+      <h1
+        class="md:py-10 md:pb-14 font-bold text-2xl md:text-[50px] text-center dark:text-sky-100"
+      >
+        Chi tiết dự án
+      </h1>
+      <div
+        class="max-w-5xl m-auto container_about flex justify-center items-center"
+      >
+        <form id="form_edit" class="m-auto w-full flex flex-col gap-2">
+          <div class="grid grid-cols-2 flex-wrap gap-x-10 gap-y-0">
+            <div class="mb-6">
+              <label
+                for="default-input"
+                class="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
+                >Tên dự án</label
+              >
+              <input
+                type="text"
+                id="default-input"
+                value="${dataEdit.title}"
+                class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+              />
+            </div>
+            <div class="mb-6">
+              <label
+                for="default-input"
+                class="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
+                >Link dự án</label
+              >
+              <input
+                type="text"
+                id="default-input"
+                value="${dataEdit.link}"
+                class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+              />
+            </div>
+            <div class="mb-6 relative">
+              <label
+                for="default-input"
+                class="block float-left mb-2 text-sm font-medium text-gray-900 dark:text-white"
+                >Đường dẫn ảnh </label
+              ><span class="cursor-pointer viewImg mx-2 underline">
+                <i class="fa-duotone fa-eye mx-1"></i>Xem ảnh
+              </span>
+              <input
+                type="text"
+                id="default-input"
+                value="${dataEdit.img}"
+                class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+              />
+              <div class="imgPro absolute hidden z-50">
+                <div class="flex flex-wrap gap-1 top-1 duration-150 mt-5">
+                  <img
+                    class="rounded-md w-[7.5rem] h-[7.5rem] object-cover"
+                    src="https://raw.githubusercontent.com/ogdp/portfolio_vanila_js/main/src/images/img_musicplayer.jpg"
+                  />
+                  <img
+                    class="rounded-md w-[7.5rem] h-[7.5rem] object-cover"
+                    src="https://raw.githubusercontent.com/ogdp/portfolio_vanila_js/main/src/images/img_musicplayer.jpg"
+                  />
+                  <img
+                    class="rounded-md w-[7.5rem] h-[7.5rem] object-cover"
+                    src="https://raw.githubusercontent.com/ogdp/portfolio_vanila_js/main/src/images/img_musicplayer.jpg"
+                  />
+                  <img
+                    class="rounded-md w-[7.5rem] h-[7.5rem] object-cover"
+                    src="https://raw.githubusercontent.com/ogdp/portfolio_vanila_js/main/src/images/img_musicplayer.jpg"
+                  />
+                  <img
+                    class="rounded-md w-[7.5rem] h-[7.5rem] object-cover"
+                    src="https://raw.githubusercontent.com/ogdp/portfolio_vanila_js/main/src/images/img_musicplayer.jpg"
+                  />
+                  <img
+                    class="rounded-md w-[7.5rem] h-[7.5rem] object-cover"
+                    src="https://raw.githubusercontent.com/ogdp/portfolio_vanila_js/main/src/images/img_musicplayer.jpg"
+                  />
+                  <img
+                    class="rounded-md w-[7.5rem] h-[7.5rem] object-cover"
+                    src="https://raw.githubusercontent.com/ogdp/portfolio_vanila_js/main/src/images/img_musicplayer.jpg"
+                  />
+                  <img
+                    class="rounded-md w-[7.5rem] h-[7.5rem] object-cover"
+                    src="https://raw.githubusercontent.com/ogdp/portfolio_vanila_js/main/src/images/img_musicplayer.jpg"
+                  />
+                  <img
+                    class="rounded-md w-[7.5rem] h-[7.5rem] object-cover"
+                    src="https://raw.githubusercontent.com/ogdp/portfolio_vanila_js/main/src/images/img_musicplayer.jpg"
+                  />
+                  <img
+                    class="rounded-md w-[7.5rem] h-[7.5rem] object-cover"
+                    src="https://raw.githubusercontent.com/ogdp/portfolio_vanila_js/main/src/images/img_musicplayer.jpg"
+                  />
+                </div>
+              </div>
+            </div>
+            <div class="mb-6">
+              <label
+                for="default-input"
+                class="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
+                >Định giá dự án</label
+              >
+              <input
+                type="number"
+                id="default-input"
+                value="${dataEdit.pricePro}"
+                class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+              />
+            </div>
+            <div class="mb-6">
+              <label
+                for="default-input"
+                class="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
+                >Lượt xem</label
+              >
+              <input
+                type="text"
+                id="default-input"
+                value="${dataEdit.views}"
+                class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                disabled
+              />
+            </div>
+            <div class="mb-6">
+              <label
+                for="default-input"
+                class="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
+                >Ngày phát triển dự án</label
+              >
+              <input
+                type="date"
+                id="default-input"
+                value="${dataEdit.create_at}"
+                class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+              />
+            </div>
+          </div>
+          <div id="editor"></div>
+          <div class="flex max-w-xs m-auto gap-7">
+            <button
+              type="submit"
+              id="btnEdit"
+              class="bg-sky-500 hover:bg-sky-700 px-10 py-2 text-lg leading-5 rounded-full font-semibold text-white"
+            >
+              Lưu
+            </button>
+            <h2
+              id="btnRemove"
+              class="cursor-pointer text-center bg-red-500 hover:bg-red-700 px-10 py-2 text-lg leading-5 rounded-full font-semibold text-white"
+            >
+              Xoá
+            </h2>
+          </div>
+        </form>
+      </div>
+    </section>
+    <script src="https://cdn.ckeditor.com/ckeditor5/36.0.1/classic/ckeditor.js"></script>
+    <!-- <script>
+      ClassicEditor.create(document.querySelector("#editor")).catch((error) => {
+        console.error(error);
+      });
+    </script> -->
+
+    <script type="text/javascript">
+      const showImages = document.querySelector(".viewImg");
+      showImages.addEventListener("click", () => {
+        let check;
+        showImages.classList.forEach((item) => {
+          if (item == "active") {
+            check = true;
+          } else {
+            check = false;
+          }
+        });
+        if (check) {
+          showImages.classList.remove("active");
+          document.querySelector(".imgPro").style.display = "none";
+        } else {
+          showImages.classList.add("active");
+          document.querySelector(".imgPro").style.display = "block";
+        }
+      });
+      let editor;
+
+      ClassicEditor.create(document.querySelector("#editor"))
+        .then((newEditor) => {
+          editor = newEditor;
+        })
+        .catch((error) => {
+          console.error(error);
+        });
+      const formEdit = document.querySelector("#form_edit");
+      formEdit.addEventListener("submit", function (e) {
+        e.preventDefault();
+        const editorData = editor.getData();
+        console.log(editorData);
+      });
+    </script>
+  </body>
+</html>

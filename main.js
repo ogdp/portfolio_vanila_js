@@ -9,6 +9,12 @@ import {
   About,
   Contact,
   Posts,
+  Admin,
+  AdminProjects,
+  AdminProjectsAdd,
+  AdminProjectsEdit,
+  AdminAbout,
+  AdminContacts,
 } from "./Global/components/components";
 // Import font awesome
 import { createApp } from "vue";
@@ -55,8 +61,22 @@ router.on("/projects/:id", ({ data }) => {
 // router.on("/posts", () => render(app, Posts));
 // router.on("/postsDetail/:id", () => render(app, PostsDetail));
 // router.notFound(() => render(app, () => console.log("NotFound")));
-router.notFound(() => {
-  console.log("NotFound");
+// ---Admin ----
+router.on("/admin/", () => render(app, Admin));
+router.on("/admin/projects", () => render(app, AdminProjects));
+router.on("/admin/projects/add", () => render(app, AdminProjectsAdd));
+router.on("/admin/projects/:id/:action", ({ data }) => {
+  const id = data.id;
+  render(app, () => {
+    if (typeof AdminProjectsEdit == "function") {
+      // console.log(typeof AdminProjectsEdit);
+      return AdminProjectsEdit(id);
+    } else {
+      return AdminProjectsEdit;
+    }
+  });
 });
-
+router.notFound(function () {
+  console.log("page not found");
+});
 router.resolve();
