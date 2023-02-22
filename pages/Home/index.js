@@ -12,7 +12,14 @@ import "aos/dist/aos.css";
 const Home = () => {
   (() => {
     var script = document.createElement("script");
-    script.innerHTML = `$("html").niceScroll({
+    // $("html").niceScroll({
+    //   cursorwidth: "10px",
+    //   scrollspeed: 50,
+    //   smoothscroll: true,
+    //   spacebarenabled: true,
+    // });
+    script.innerHTML = `
+    $("html").niceScroll({
       cursorwidth: "10px",
       scrollspeed: 260,
       smoothscroll: true,
