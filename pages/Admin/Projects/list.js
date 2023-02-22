@@ -17,7 +17,6 @@ const list = () => {
       }
     })();
   }, []);
-  console.log(cate);
   useEffect(() => {
     const fetchData = async () => {
       try {
@@ -187,10 +186,21 @@ const list = () => {
                   item.id
                 }" id="checkProject" type="checkbox" value="" class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600"></td>
                 <td class="border border-slate-200 py-3 px-2">${index + 1}</td>
-                <td class="border border-slate-200 py-3 px-2">${item.title}</td>
-                <td class="border border-slate-200 py-3 px-2">${
-                  item.namePro
-                }</td>
+                <td class="border border-slate-200 py-3 px-2">
+                <a style="display:-webkit-box;
+                -webkit-line-clamp:1;
+                -webkit-box-orient: vertical;
+                overflow: hidden;
+                text-overflow: ellipsis;
+                word-break: break-word;">${item.title}</a>
+                </td>
+                <td class="border border-slate-200 py-3 px-2"> 
+               <a style="display:-webkit-box;
+               -webkit-line-clamp:1;
+               -webkit-box-orient: vertical;
+               overflow: hidden;
+               text-overflow: ellipsis;
+               word-break: break-word;"> ${item.namePro}</a> </td>
                 <td class="border border-slate-200 py-3 px-2">${(() => {
                   const formattedNumber = new Intl.NumberFormat("vi-VN", {
                     style: "currency",
@@ -199,7 +209,12 @@ const list = () => {
                   return formattedNumber;
                 })()}</td>
                 <td class="border border-slate-200 py-3 px-2">
-                ${item.member}
+                <a style="display:-webkit-box;
+               -webkit-line-clamp:1;
+               -webkit-box-orient: vertical;
+               overflow: hidden;
+               text-overflow: ellipsis;
+               word-break: break-word;">${item.member}</a> 
                 </td>
                 <td class="border border-slate-200 py-3 px-2">
                 ${(() =>

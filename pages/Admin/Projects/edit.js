@@ -170,7 +170,7 @@ const edit = (id) => {
           if (dataEdit.content == "") {
             editor.setData("");
           } else {
-            editor.setData(dataEdit?.content + "<br>");
+            editor.setData(dataEdit?.content);
           }
         })
         .catch((error) => {

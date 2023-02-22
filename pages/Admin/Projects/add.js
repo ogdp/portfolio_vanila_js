@@ -62,7 +62,7 @@ const add = (id) => {
           },
           body: JSON.stringify(newProject),
         })
-          .then(() => router.navigate("/admin/projects"))
+          .then(() => location.reload(), router.navigate("/admin/projects"))
           .catch((error) => console.log(error));
       });
       const uploadImgs = async (files) => {
@@ -112,6 +112,11 @@ const add = (id) => {
         multiple_imgs.addEventListener("change", function () {
           const multiple_imgs = document.querySelector("#multiple_imgs");
           if (multiple_imgs.files.length > 0) {
+            while (document.querySelector(".listImgs").firstChild) {
+              document
+                .querySelector(".listImgs")
+                .removeChild(document.querySelector(".listImgs").firstChild);
+            }
             const fileList = [...multiple_imgs.files]; //
             const listImgs = document.querySelector(".listImgs"); // Lấy đối tượng DOM của thẻ có class là 'listImgs'
             fileList.forEach((file) => {

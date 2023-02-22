@@ -128,6 +128,7 @@ const Contact = () => {
         }
         if (checkValidated == true) {
           alert("Gửi form thành công!");
+          location.reload();
         }
       });
       function isValidEmail(email) {
