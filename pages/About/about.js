@@ -89,7 +89,7 @@ const About = () => {
                       <div class="max-md:order-1 max-md:w-full l_about w-[25%]">
                             <div class="w-full">
                                 <div data-aos="flip-up" data-aos-offset="200" data-aos-delay="150" data-aos-duration="1000" data-aos-easing="ease-in-out" data-aos-mirror="true" data-aos-once="false" class="w-full bg-white p-2 rounded-lg">
-                                      <img class="rounded-lg md:w-full" src="${myInfo.srcImg}" alt="" srcset="" />
+                                      <img class="rounded-lg md:w-full" src="${myInfo.srcImg}" alt="" />
                                 </div>
                             </div>
                       </div>
