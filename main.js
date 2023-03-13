@@ -50,6 +50,14 @@ router.on("/projects/:id", ({ data }) => {
 // router.on("/postsDetail/:id", () => render(app, PostsDetail));
 // router.notFound(() => render(app, () => console.log("NotFound")));
 // ---Admin ----
+// user | {"id": 1}
+router.on("/admin/*", () => {}, {
+  before: (next) => {
+    const user = JSON.parse(localStorage.getItem("user"));
+    if (!user | (user && user.id != 1)) return (window.location.href = "/");
+    next();
+  },
+});
 router.on("/admin/", () => render(app, () => AdminHeader()));
 router.on("/admin/about", () =>
   render(app, () => AdminHeader() + AdminAbout())
