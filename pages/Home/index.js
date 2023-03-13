@@ -18,14 +18,14 @@ const Home = () => {
     //   smoothscroll: true,
     //   spacebarenabled: true,
     // });
-    script.innerHTML = `
-    $("html").niceScroll({
-      cursorwidth: "10px",
-      scrollspeed: 260,
-      smoothscroll: true,
-      spacebarenabled: true,
-    });
-    $("html").getNiceScroll().hide();`;
+    // script.innerHTML = `
+    // $("html").niceScroll({
+    //   cursorwidth: "10px",
+    //   scrollspeed: 260,
+    //   smoothscroll: true,
+    //   spacebarenabled: true,
+    // });
+    // $("html").getNiceScroll().hide();`;
     document.body.appendChild(script);
   })();
   function loadCSS(src) {
